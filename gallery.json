@@ -1,4 +1,17 @@
 {
- "course": "GEOG 270 · Cartography and Mapmaking",
- "items": []
+ "course": "GEOG 270 Cartography and Mapmaking",
+ "items": [
+  {
+   "id": "my-atlas-jqn3q",
+   "title": "My Atlas",
+   "credit": "Jonathan Cinnamon",
+   "kind": "atlas",
+   "desc": "my atlas on x subject",
+   "term": "2026W2",
+   "added": "2026-10-09T17:56:58.616Z",
+   "updated": "2026-10-09T17:56:58.616Z",
+   "thumb": "work/my-atlas-jqn3q.jpg"
+  }
+ ],
+ "updated": "2026-10-09T17:56:58.616Z"
 }
