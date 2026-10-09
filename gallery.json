@@ -2,17 +2,6 @@
  "course": "GEOG 270 Cartography and Mapmaking",
  "items": [
   {
-   "id": "geog-128-places-ktdvm",
-   "title": "Geog 128 Places",
-   "credit": "me hi",
-   "kind": "map",
-   "desc": "",
-   "term": "2026W2",
-   "added": "2026-10-09T21:49:16.108Z",
-   "updated": "2026-10-09T21:49:16.108Z",
-   "thumb": "work/geog-128-places-ktdvm.jpg"
-  },
-  {
    "id": "geog-128-places-ujdgh",
    "title": "Geog 128 Places",
    "credit": "J. C.",
@@ -24,5 +13,5 @@
    "thumb": "work/geog-128-places-ujdgh.jpg"
   }
  ],
- "updated": "2026-10-09T21:58:16.866Z"
+ "updated": "2026-10-09T21:58:26.383Z"
 }
