@@ -2,6 +2,17 @@
  "course": "GEOG 270 Cartography and Mapmaking",
  "items": [
   {
+   "id": "geog-128-places-a8ska",
+   "title": "Geog 128 Places",
+   "credit": "255pm",
+   "kind": "map",
+   "desc": "",
+   "term": "2026W2",
+   "added": "2026-10-09T21:55:36.280Z",
+   "updated": "2026-10-09T21:55:36.280Z",
+   "thumb": "work/geog-128-places-a8ska.jpg"
+  },
+  {
    "id": "geog-128-places-ktdvm",
    "title": "Geog 128 Places",
    "credit": "me hi",
@@ -46,5 +57,5 @@
    "thumb": "work/my-atlas-jqn3q.jpg"
   }
  ],
- "updated": "2026-10-09T21:49:16.108Z"
+ "updated": "2026-10-09T21:55:36.280Z"
 }
