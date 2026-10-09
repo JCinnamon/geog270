@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GEOG 270 Student Map Gallery — Jonathan Cinnamon</title>
-<meta name="description" content="Atlases and interactive maps made by students in GEOG 270 Cartography and Mapmaking at UBC Okanagan.">
+<meta name="description" content="Atlases, interactive maps and map layouts made by students in GEOG 270 Cartography and Mapmaking at UBC Okanagan.">
 <meta name="theme-color" content="#2c5f7a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,7 +114,7 @@
     <div class="inner">
       <p class="eyebrow">GEOG 270 · Cartography and Mapmaking · UBC Okanagan</p>
       <h1>Student map gallery</h1>
-      <p class="lede">Atlases and interactive maps made by students in GEOG 270, built with Map-O-Matic. Open any piece to pan, zoom and click through it.</p>
+      <p class="lede">Atlases, interactive maps and map layouts made by students in GEOG 270, built with Map-O-Matic. Open any piece to pan, zoom and click through it.</p>
       <div class="pill-links"><a href="https://www.jonathancinnamon.com/map-o-matic/">Make your own with Map-O-Matic</a><a href="https://www.jonathancinnamon.com/#teaching">About the course</a></div>
     </div>
   </div>
@@ -122,7 +122,7 @@
     <div class="inner">
       <div class="bar">
         <div class="chips" role="tablist" aria-label="Show">
-          <button class="chip on" data-k="all">All</button><button class="chip" data-k="atlas">Atlases</button><button class="chip" data-k="map">Maps</button>
+          <button class="chip on" data-k="all">All</button><button class="chip" data-k="atlas">Atlases</button><button class="chip" data-k="map">Interactive maps</button><button class="chip" data-k="layout">Map layouts</button>
         </div>
         <div class="tools">
           <select id="term" aria-label="Term"><option value="">All terms</option></select>
@@ -153,6 +153,7 @@
   var CFG=window.GALLERY_CONFIG||{};
   var E=function(v){ return (v==null?'':String(v)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); };
   var SAFE=function(p){ return /^work\/[a-z0-9-]+\.(jpg|html)$/.test(p||'') ? p : ''; };
+  var KL={atlas:'Atlas', map:'Interactive map', layout:'Map layout'};
   var fmtDate=function(s){ try{ return new Date(s).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}); }catch(e){ return ''; } };
 
   /* ---------------- public gallery ---------------- */
@@ -169,10 +170,10 @@
     g.innerHTML=list.map(function(it){
       var th=SAFE(it.thumb);
       return '<a class="card" href="view.html?id='+encodeURIComponent(it.id)+'">'+
-        '<div class="thumb">'+(th?'<img src="'+th+'" alt="" loading="lazy">':'<div class="ph">'+(it.kind==='atlas'?'📖':'🗺')+'</div>')+
-          '<div class="badges"><span class="badge">'+(it.kind==='atlas'?'Atlas':'Map')+'</span>'+(it.featured?'<span class="badge feat">Featured</span>':'')+'</div></div>'+
+        '<div class="thumb">'+(th?'<img src="'+th+'" alt="" loading="lazy">':'<div class="ph">'+(it.kind==='atlas'?'📖':it.kind==='layout'?'🖼':'🗺')+'</div>')+
+          '<div class="badges"><span class="badge">'+KL[it.kind]+'</span>'+(it.featured?'<span class="badge feat">Featured</span>':'')+'</div></div>'+
         '<div class="body"><p class="title">'+E(it.title)+'</p><p class="by">'+E(it.credit)+(it.term?' · '+E(it.term):'')+'</p>'+
-          (it.desc?'<p class="desc">'+E(it.desc)+'</p>':'<p class="desc"></p>')+'<span class="open">Open '+(it.kind==='atlas'?'atlas':'map')+' →</span></div></a>';
+          (it.desc?'<p class="desc">'+E(it.desc)+'</p>':'<p class="desc"></p>')+'<span class="open">Open '+(it.kind==='atlas'?'atlas':it.kind==='layout'?'layout':'map')+' →</span></div></a>';
     }).join('');
   }
   document.querySelectorAll('.chip').forEach(function(c){ c.onclick=function(){ kind=c.getAttribute('data-k'); document.querySelectorAll('.chip').forEach(function(x){ x.classList.toggle('on', x===c); }); render(); }; });
@@ -218,7 +219,7 @@
       list.map(function(r){
         var st=/pending/.test(r.status)?'pending':r.status;
         return '<div class="row" data-id="'+E(r.id)+'"><div class="ph2"></div><div><h3>'+E(r.title)+'<span class="st '+st+'">'+(r.status==='published+pending'?'update waiting':st)+'</span></h3>'+
-          '<div class="meta">'+(r.kind==='atlas'?'Atlas':'Map')+' · by <b>'+E(r.name)+'</b>'+(r.credit!=='full'?' (shown as “'+E(credit(r))+'”)':'')+(r.term?' · '+E(r.term):'')+
+          '<div class="meta">'+KL[r.kind]+' · by <b>'+E(r.name)+'</b>'+(r.credit!=='full'?' (shown as “'+E(credit(r))+'”)':'')+(r.term?' · '+E(r.term):'')+
           '<br>Submitted '+fmtDate(r.submitted)+' · consent given '+fmtDate(r.consentAt)+(r.desc?'<br>'+E(r.desc):'')+(r.note?'<br><i>Note: '+E(r.note)+'</i>':'')+'</div></div>'+
           '<div class="acts">'+
             (st==='pending'?'<button class="btn light" data-a="preview">Preview</button><button class="btn ok" data-a="approve">Approve</button><button class="btn bad" data-a="reject">Reject</button>':'')+
