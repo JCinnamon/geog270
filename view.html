@@ -32,7 +32,7 @@
     var it=(g.items||[]).filter(function(x){ return x.id===id; })[0];
     if(!it){ tt.textContent='Not found'; msg.textContent='That piece is not in the gallery (it may have been removed).'; return; }
     document.title=it.title+' — GEOG 270 Student Map Gallery';
-    tt.textContent=it.title; tb.textContent=(it.kind==='atlas'?'Atlas':'Map')+' by '+it.credit+(it.term?' · '+it.term:'');
+    tt.textContent=it.title; tb.textContent=({atlas:'Atlas',map:'Interactive map',layout:'Map layout'}[it.kind]||'Map')+' by '+it.credit+(it.term?' · '+it.term:'');
     /* student work runs in a sandbox: its scripts can't reach this site or its visitors' data */
     var f=document.createElement('iframe');
     f.setAttribute('sandbox','allow-scripts allow-popups allow-popups-to-escape-sandbox allow-downloads');
