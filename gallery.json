@@ -1,17 +1,5 @@
 {
  "course": "GEOG 270 Cartography and Mapmaking",
- "items": [
-  {
-   "id": "geog-128-places-ujdgh",
-   "title": "Geog 128 Places",
-   "credit": "J. C.",
-   "kind": "map",
-   "desc": "",
-   "term": "2026W2",
-   "added": "2026-10-09T18:59:54.518Z",
-   "updated": "2026-10-09T18:59:54.518Z",
-   "thumb": "work/geog-128-places-ujdgh.jpg"
-  }
- ],
- "updated": "2026-10-09T21:58:26.383Z"
+ "items": [],
+ "updated": "2026-10-09T21:58:32.131Z"
 }
