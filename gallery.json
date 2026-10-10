@@ -1,5 +1,17 @@
 {
  "course": "GEOG 270 Cartography and Mapmaking",
- "items": [],
- "updated": "2026-10-09T21:58:32.131Z"
+ "items": [
+  {
+   "id": "geog-128-places-j9ccp",
+   "title": "Geog 128 Places",
+   "credit": "Jon Cinnamon",
+   "kind": "layout",
+   "desc": "2020",
+   "term": "2026W2",
+   "added": "2026-10-10T03:21:29.571Z",
+   "updated": "2026-10-10T03:21:29.571Z",
+   "thumb": "work/geog-128-places-j9ccp.jpg"
+  }
+ ],
+ "updated": "2026-10-10T03:21:29.571Z"
 }
